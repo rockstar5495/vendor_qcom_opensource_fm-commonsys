@@ -4168,6 +4168,21 @@ public class FMRadioService extends Service
           else
              return Integer.MIN_VALUE;
    }
+
+   String getSocName() {
+          if(mReceiver != null)
+             return mReceiver.getSocName();
+          else
+             return null;
+   }
+
+   boolean getFmStatsProp() {
+          if(mReceiver != null)
+             return mReceiver.getFmStatsProp();
+          else
+             return false;
+   }
+
    private void setAlarmSleepExpired (long duration) {
        Intent i = new Intent(SLEEP_EXPIRED_ACTION);
        AlarmManager am = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
